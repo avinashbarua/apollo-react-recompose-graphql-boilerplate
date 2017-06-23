@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import { ApolloClient } from 'react-apollo'
+import { ApolloClient, createNetworkInterface } from 'react-apollo'
 
+// import reducers
 import ui from './uiReducer'
 
-export const client = new ApolloClient();
+
+// setup apollo redux client
+const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/insta-prod' });
+export const client = new ApolloClient({ networkInterface });
 
 export default combineReducers({
   ui,

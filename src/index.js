@@ -1,15 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import { ApolloProvider } from 'react-apollo';
-import App from './containers/App'
+import App from './components/App'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import store, { history } from './store'
 import { client } from './reducers'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import registerServiceWorker from './registerServiceWorker'
 
+// this is just optional,
+// used by mui for touch devices
 injectTapEventPlugin();
 
 
